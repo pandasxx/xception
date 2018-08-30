@@ -1,0 +1,25 @@
+samle use
+
+step 1 :
+	
+	model = xception_init("Xception_finetune.h5")
+
+step 2 :
+
+	predictions = xception_predict(img_data, 4, model)
+
+ps:
+	
+	"Xception_finetune.h5" is a trained weight file
+
+	img_date shoud be a image date with numpy array format, its shape should like  [batches, h,w,channel]
+
+	4 is batch size, with titan xp, it can be 20
+
+	predictions is a result list, batches_num * [ classes_ num *  class_probability]
+	
+	
+# 分类系统图像输入要求，
+size = 199 * 199
+小于199 以黑边补齐
+大于199 取中心位置
